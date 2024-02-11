@@ -27,7 +27,7 @@ public:
 	2. We customize the swapchain by filling up the swapchain description structure.
 	3. Use DXGI Factory to create a swap chain
 	*/
-.
+
 
 	/*
 	* To render a blank frame window.(Paint window with some color)
