@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  App.cpp
+App.obj : error LNK2019: unresolved external symbol "public: void __cdecl CGame::Initialize(void)" (?Initialize@CGame@@QEAAXXZ) referenced in function "public: virtual void __cdecl App::[Windows::ApplicationModel::Core::IFrameworkView]::Run(void)" (?Run@?QIFrameworkView@Core@ApplicationModel@Windows@@App@@UE$AAAXXZ)
+App.obj : error LNK2019: unresolved external symbol "public: void __cdecl CGame::Update(void)" (?Update@CGame@@QEAAXXZ) referenced in function "public: virtual void __cdecl App::[Windows::ApplicationModel::Core::IFrameworkView]::Run(void)" (?Run@?QIFrameworkView@Core@ApplicationModel@Windows@@App@@UE$AAAXXZ)
+App.obj : error LNK2019: unresolved external symbol "public: void __cdecl CGame::Render(void)" (?Render@CGame@@QEAAXXZ) referenced in function "public: virtual void __cdecl App::[Windows::ApplicationModel::Core::IFrameworkView]::Run(void)" (?Run@?QIFrameworkView@Core@ApplicationModel@Windows@@App@@UE$AAAXXZ)
+C:\Users\semwa\source\repos\UWP_DirectX\x64\Debug\UWP_DirectX\UWP_DirectX.exe : fatal error LNK1120: 3 unresolved externals
