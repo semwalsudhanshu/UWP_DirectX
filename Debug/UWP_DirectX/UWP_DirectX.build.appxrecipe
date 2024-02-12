@@ -31,6 +31,12 @@
     <AppxPackagedFile Include="C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\UWP_DirectX.winmd">
       <PackagePath>UWP_DirectX.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\PixelShader.cso">
+      <PackagePath>PixelShader.cso</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\VertexShader.cso">
+      <PackagePath>VertexShader.cso</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\semwa\source\repos\UWP_DirectX\UWP_DirectX\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
