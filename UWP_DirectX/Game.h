@@ -42,6 +42,9 @@ public:
 	void InitPipeline();
 	void Update(); // code that manipulates the game such as timer and input
 	void Render(); // draw graphics
+
+
+	float time;
 	/*
 	 Swap Chain Creation Process
 	1. Obtain a pointer to DXGI Factory

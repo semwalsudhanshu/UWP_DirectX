@@ -118,13 +118,14 @@ void CGame::Initialize()
 	deviceContext->RSSetViewports(1, &viewPort);
 	InitGraphics();
 	InitPipeline();
+	time = 0.0f;
 
 }
 
 //Perform updates to the game states
 void CGame::Update()
 {
-
+	time += 0.05f;
 }
 
 //renders a single frame of 3d graphcis
@@ -151,12 +152,39 @@ void CGame::Render()
 	//setting up the primitive topology
 	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
+	/*
 	OFFSET Offset;
 	Offset.X = 0.5f;
 	Offset.Y = 0.2f;
 	Offset.Z = 0.7f;
+	*/
 
-	deviceContext->UpdateSubresource(constantBuffer.Get(), 0, 0, &Offset, 0, 0);
+	/*
+		Calculate the world transformation
+	*/
+
+	XMMATRIX matWorld = XMMatrixRotationY(time);
+
+	// Calculate view transformation
+	XMVECTOR camPosition = XMVectorSet(1.5f, 0.5f, 1.5f, 0.0f);
+	XMVECTOR camLookAt = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+	XMVECTOR camUp = XMVectorSet(0.0f, 1.0f, 0.0f, 0.f);
+	XMMATRIX matView = XMMatrixLookAtLH(camPosition, camLookAt, camUp);
+
+	//caculate projection transformation
+	CoreWindow^ Window = CoreWindow::GetForCurrentThread();
+	XMMATRIX matProjection = XMMatrixPerspectiveFovLH(
+		XMConvertToRadians(45.0f),
+		(FLOAT)Window->Bounds.Width / (FLOAT)Window->Bounds.Height,
+		1.0f,
+		100.0f
+	);
+	XMMATRIX matFinal = matWorld * matView * matProjection;
+
+	//load the data into constant buffers
+
+
+	deviceContext->UpdateSubresource(constantBuffer.Get(), 0, 0, &matFinal, 0, 0);
 
 	//draw the primitive
 	deviceContext->Draw(3, 0);
@@ -228,14 +256,12 @@ void CGame::InitPipeline()
 	//Constant Buffer
 	D3D11_BUFFER_DESC bufferDesc = { 0 };
 	bufferDesc.Usage = D3D11_USAGE_DEFAULT;
-	bufferDesc.ByteWidth = 16;
+	bufferDesc.ByteWidth = 64;
 	bufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 
 	device->CreateBuffer(&bufferDesc, nullptr, &constantBuffer);
 	deviceContext->VSSetConstantBuffers(0, 1, constantBuffer.GetAddressOf());
 	
-
-	//deviceContext->IASetVertexBuffers();
 
 }
 
