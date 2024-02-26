@@ -22,10 +22,16 @@ public:
 	ComPtr<ID3D11PixelShader>pixelShader;
 
 	ComPtr<ID3D11InputLayout>inputLayout;
+	ComPtr<ID3D11Buffer> constantBuffer;
 
 
 	struct VERTEX
 	{
+		float X, Y, Z; // Position
+		float R, G, B; // Color
+	};
+
+	struct OFFSET {
 		float X, Y, Z;
 	};
 
