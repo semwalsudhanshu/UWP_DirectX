@@ -1,4 +1,9 @@
-﻿  compilation object save succeeded; see C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\VertexShader.cso
-  App.cpp
+﻿  App.cpp
   Game.cpp
+C:\Users\semwa\source\repos\UWP_DirectX\UWP_DirectX\Game.cpp(116,29): warning C4244: '=': conversion from 'float' to 'UINT', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\semwa\source\repos\UWP_DirectX\UWP_DirectX\Game.cpp(117,30): warning C4244: '=': conversion from 'float' to 'UINT', possible loss of data
+  (compiling source file '/Game.cpp')
+  
   UWP_DirectX.vcxproj -> C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\UWP_DirectX.exe

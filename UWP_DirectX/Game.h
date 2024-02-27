@@ -23,6 +23,7 @@ public:
 
 	ComPtr<ID3D11InputLayout>inputLayout;
 	ComPtr<ID3D11Buffer> constantBuffer;
+	ComPtr<ID3D11DepthStencilView> zBuffer;
 
 
 	struct VERTEX

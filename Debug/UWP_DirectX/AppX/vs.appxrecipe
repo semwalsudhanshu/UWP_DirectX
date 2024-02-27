@@ -35,7 +35,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\UWP_DirectX.exe">
       <PackagePath>UWP_DirectX.exe</PackagePath>
-      <Modified>2024-02-26T16:05:59.748</Modified>
+      <Modified>2024-02-27T14:41:48.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\semwa\source\repos\UWP_DirectX\Debug\UWP_DirectX\UWP_DirectX.winmd">
       <PackagePath>UWP_DirectX.winmd</PackagePath>
